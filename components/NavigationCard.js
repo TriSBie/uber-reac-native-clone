@@ -1,14 +1,13 @@
-import { GOOGLE_MAP_API_KEY } from "@env"
+import { GOOGLE_MAP_API_KEY_FIXED } from "@env"
+import { useNavigation } from "@react-navigation/native"
 import React from 'react'
-import { KeyboardAvoidingView, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { useDispatch } from 'react-redux'
-import tw from 'tailwind-react-native-classnames'
-import { StyleTouchableOpacity, StyledText, StyledView } from '../common'
+import tw from 'twrnc';
+import { StyledText, StyledView } from '../common'
 import { setDestination } from "../features/slices/navSlice"
-import { useNavigation } from "@react-navigation/native"
 import NavFavourites from "./NavFavourites"
-import { Icon } from "@rneui/base"
 import ServiceButtonGroup from "./ServiceButtonGroup"
 
 const NavigationCard = () => {
@@ -21,6 +20,7 @@ const NavigationCard = () => {
             <StyledView className='border-1 border-indigo-500'>
                 <StyledView>
                     <GooglePlacesAutocomplete
+                        // ref={ref}
                         debounce={400}
                         placeholder={"Where to?"}
                         fetchDetails={true}
@@ -49,7 +49,7 @@ const NavigationCard = () => {
                             }
                         }}
                         query={{
-                            key: GOOGLE_MAP_API_KEY,
+                            key: GOOGLE_MAP_API_KEY_FIXED,
                             language: 'en',
                         }}
                     />

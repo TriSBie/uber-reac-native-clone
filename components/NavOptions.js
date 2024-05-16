@@ -1,5 +1,5 @@
 import { FlatList, TouchableOpacity } from "react-native";
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import { StyleImage, StyledText, StyledView } from "../common";
 import { Icon } from "@rneui/base";
 import { useNavigation } from "@react-navigation/native";

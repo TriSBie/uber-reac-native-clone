@@ -1,8 +1,7 @@
 import { Icon } from '@rneui/base'
 import React from 'react'
 import { StyleFlatList, StyleTouchableOpacity, StyledText, StyledView } from '../common'
-import tw from 'tailwind-react-native-classnames'
-
+import tw from 'twrnc';
 const data = [
     {
         id: '123',

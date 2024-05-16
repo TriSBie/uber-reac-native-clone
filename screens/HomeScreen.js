@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleImage, StyledView } from "../common";
 import NavOptions from '../components/NavOptions';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { GOOGLE_MAP_API_KEY } from "@env"
+import { GOOGLE_MAP_API_KEY_FIXED } from "@env"
 import { useDispatch } from 'react-redux';
 import { setDestination, setOrigin } from '../features/slices/navSlice';
 import NavFavourites from '../components/NavFavourites';
@@ -41,11 +41,13 @@ const HomeScreen = () => {
                         }))
                         dispatch(setDestination(null))
                     }}
+                    onFail={(error) => console.stack(error)}
                     query={{
-                        key: GOOGLE_MAP_API_KEY,
+                        key: GOOGLE_MAP_API_KEY_FIXED,
                         language: 'en',
                     }}
-                    debounce={400} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
+                    debounce={400}
+                    // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
                     nearbyPlacesAPI={'GooglePlacesSearch'}
                 />
                 <NavOptions />

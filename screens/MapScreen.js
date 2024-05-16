@@ -6,11 +6,12 @@ import Map from '../components/Map';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NavigationCard from '../components/NavigationCard';
 import RideOptionCard from '../components/RideOptionCard';
+import tw from 'twrnc';
 
 const MapScreen = () => {
     const SubStack = createNativeStackNavigator();
     return (
-        <SafeAreaView>
+        <SafeAreaView style={tw`flex-1 h-full`}>
             <StyledView className='h-1/2 bg-black-500'>
                 <Map />
             </StyledView>
@@ -26,7 +27,6 @@ const MapScreen = () => {
                         name="RideOptionCard"
                         component={RideOptionCard} options={{
                             headerShown: false,
-                            headerTransparent: true,
                         }}
                     />
                 </SubStack.Navigator>

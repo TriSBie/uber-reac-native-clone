@@ -16,6 +16,10 @@ const Navigation = () => {
                 flex: 1
             }}>
             <NavigationContainer
+                onUnhandledAction={(error) => {
+                    console.log("Using Fallback", error)
+                }}
+
                 theme={{
                     colors: {
                         background: 'white',
